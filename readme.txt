@@ -1,2 +1,2 @@
-Ê¹ÓÃ·½·¨:
+ä½¿ç”¨æ–¹æ³•ï¼š
 timing <Executable File>
