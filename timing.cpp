@@ -19,12 +19,11 @@ void PrintErrorMessage(long ErrorCode){
                    MAKELANGID(__TIMING_SYSTEM_ERROR_MESSAGE_LANG,
                               __TIMING_SYSTEM_ERROR_MESSAGE_SUBLANG),
                    LPSTR(&ErrorString),
-                   sizeof (ErrorString),
+                   sizeof(ErrorString),
                    NULL);
     cout << ErrorString;
     cout.flush();
 }
-
 
 int main(int argc, char* argv[]){
     si.cb = sizeof(STARTUPINFO);
@@ -34,7 +33,7 @@ int main(int argc, char* argv[]){
     }
     if (!CreateProcess(argv[1], NULL, NULL, NULL, false, 0, NULL, NULL, &si, &pi)){
         int en = GetLastError();
-        printf("Failed to create process %s!\n", argv[1]);
+        printf("Failed to create process!\n");
         PrintErrorMessage(en);
         return 0;
     }
@@ -48,7 +47,7 @@ int main(int argc, char* argv[]){
 
     printf("\n");
     printf("Physical time: %llu ms\n", (tExit-tCreate)/10000);
-    printf("Kernel time: %llu ms\n", tKernel/10000);
-    printf("User time: %llu ms\n", tUser/10000);
+    printf("Kernel time:   %llu ms\n", tKernel/10000);
+    printf("User time:     %llu ms\n", tUser/10000);
     return 0;
 }
