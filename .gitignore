@@ -23,7 +23,7 @@ __*__.*
 *.lai
 *.la
 *.a
-*.lib
+# *.lib
 
 # Executables
 *.exe
